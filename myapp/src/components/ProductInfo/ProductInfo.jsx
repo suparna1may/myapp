@@ -1,7 +1,19 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import Layout from '../Layout/Layout'
 
 function ProductInfo() {
+
+	const { productId } = useParams(); // Get the product ID from the URL
+    const product = useSelector((state) =>
+        state.allCart.items.find((item) => item.id === parseInt(productId)) // Find the product by ID
+    );
+
+    if (!product) {
+        return <div>Product not found</div>;
+    }
+	
   return (
     <>
 	<Layout>
@@ -10,64 +22,19 @@ function ProductInfo() {
 				<div className="container">
 					<div className="product product-single row mb-2">
 						<div className="col-md-6">
-							<div className="product-gallery pg-vertical product-gallery-sticky">
-								<div className="product-single-carousel owl-carousel owl-theme owl-nav-inner row cols-1">
-									<figure className="product-image">
-										<img src="images/products/1.jpg" alt="Blue Pinafore Denim Dress"/>
-									</figure>
-									<figure className="product-image">
-										<img src="images/products/2.jpg" />
-									</figure>
-									<figure className="product-image">
-										<img src="images/products/3.jpg"
-											alt="Blue Pinafore Denim Dress" />
-									</figure>
-									<figure className="product-image">
-										<img src="images/products/4.jpg"
-											alt="Blue Pinafore Denim Dress" />
-									</figure>
-									<figure className="product-image">
-										<img src="images/products/5.jpg"
-											alt="Blue Pinafore Denim Dress" />
-									</figure>
-								</div>
-								<div className="product-thumbs-wrap">
-									<div className="product-thumbs">
-										<div className="product-thumb active">
-											<img src="images/products/1.jpg"
-												alt="product thumbnail" />
-										</div>
-										<div className="product-thumb">
-											<img src="images/products/2.jpg"
-												alt="product thumbnail" />
-										</div>
-										<div className="product-thumb">
-											<img src="images/products/3.jpg"
-												alt="product thumbnail" />
-										</div>
-										<div className="product-thumb">
-											<img src="images/products/4.jpg"
-												alt="product thumbnail"/>
-										</div>
-										<div className="product-thumb">
-											<img src="images/products/5.jpg"
-												alt="product thumbnail"/>
-										</div>
-									</div>
-									<button className="thumb-up disabled"><i className="fas fa-chevron-left"></i></button>
-									<button className="thumb-down disabled"><i className="fas fa-chevron-right"></i></button>
-								</div>
-							</div>
+							<figure className="product-image">
+										<img src={product.src} alt="Blue Pinafore Denim Dress"/>
+									</figure>							
 						</div>
 						<div className="col-md-6">
 							<div className="product-details">
 						
-								<h1 className="product-name">Men's Fashion T Shirt</h1>
+								<h1 className="product-name">{product.name}</h1>
 								<div className="product-meta">
 									SKU: <span className="product-sku">12345670</span>
 									BRAND: <span className="product-brand">The Northland</span>
 								</div>
-								<div className="product-price mb-2">$139.00</div>
+								<div className="product-price mb-2">${product.price}</div>
 								<div className="ratings-container">
 									<div className="ratings-full">
 										<span className="ratings"></span>
@@ -88,9 +55,8 @@ function ProductInfo() {
 											<input className="quantity form-control" type="number" min="1" max="1000000"/>
 											<button className="quantity-plus d-icon-plus"></button>
 										</div>
-										<button
-											className="btn-product btn-cart text-normal ls-normal font-weight-semi-bold"><i
-												className="d-icon-bag"></i>Add to
+										<button  onClick={() => alert('Added to Cart')} className="btn-product btn-cart text-normal ls-normal font-weight-semi-bold">
+											<i className="d-icon-bag"></i>Add to
 											Cart</button>
 									</div>
 								</div>

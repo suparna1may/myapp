@@ -6,8 +6,6 @@ import { decreaseItemQuantity, getCartTotal, increaseItemQuantity, removeItem } 
 
 function Cart() {
 
- 
-
     const { cart, totalQuantity, totalPrice } = useSelector((state) => state.allCart);
 
     const dispatch = useDispatch();

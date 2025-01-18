@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector }  from "react-redux";
+import { Link } from 'react-router-dom';
 import { addToCart } from '../../redux/data/cartSlice';
 
 
@@ -17,10 +18,12 @@ function ProductCard() {
                             <div className="col-lg-3 col-md-4 col-6 mb-4" key={item.id}>
                                 <div className="product">
                                     <figure className="product-media">
-                                        <a onClick={() => dispatch(addToCart(item))}>
-                                            <img src={item.src} alt="Blue Pinafore Denim Dress"
+                                    <Link to={`/product/${item.id}`}>
+                                    <img src={item.src} alt="Blue Pinafore Denim Dress"
                                                 width="280" height="315" />
-                                        </a>
+                                    </Link>
+                                          
+                                       
                                         <div className="product-label-group">
                                             <label className="product-label label-new">new</label>
                                         </div>
