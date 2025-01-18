@@ -8,8 +8,9 @@ import {
 
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
-import ProductDetails from './pages/ProductDetails/ProductDetails';
+import ProductInfo from './components/ProductInfo/ProductInfo';
 import MyState from './context/data/myState';
+import Cart from './pages/Cart/Cart';
 
 
 function App() {
@@ -18,10 +19,10 @@ function App() {
     <MyState>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/ProductDetails" element={<ProductDetails />} />
-
+          <Route path="/" element={<Home/>} />
+          <Route path="/About" element={<About/>} />
+          <Route path="/ProductInfo/:id" element={<ProductInfo/>} />
+          <Route path="/Cart" element={<Cart/>} />
         </Routes>
       </Router>
     </MyState>

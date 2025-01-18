@@ -1,9 +1,11 @@
 import React from 'react'
+import Layout from '../Layout/Layout'
 
-function InnerProduct() {
+function ProductInfo() {
   return (
     <>
-    	<div className="main mt-6 single-product">
+	<Layout>
+	<div className="main mt-6 single-product">
 			<div className="page-content mb-10 pb-6">
 				<div className="container">
 					<div className="product product-single row mb-2">
@@ -114,9 +116,11 @@ function InnerProduct() {
 			</div>
 			
 		</div>
+	</Layout>
+  
       
     </>
   )
 }
 
-export default InnerProduct
+export default ProductInfo

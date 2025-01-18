@@ -1,8 +1,14 @@
 import React from 'react';
 import Logo from "../../assets/images/logo.png";
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 
 function Navbar() {
+    const { cart } = useSelector(
+        (state) => state.allCart
+      );
+
     return (
         <>
             <div className="header">
@@ -71,26 +77,7 @@ function Navbar() {
                                         <a href="#" className="btn btn-dark btn-link btn-icon-right btn-close">close<i
                                             className="d-icon-arrow-right"></i><span className="sr-only">wishlist</span></a>
                                     </div>
-                                    <div className="products scrollable">
-                                        <div className="product product-wishlist">
-                                            <figure className="product-media">
-                                                <a href="#">
-                                                    <img src="images/wishlist/product-1.jpg" width="100" height="100"
-                                                        alt="product" />
-                                                </a>
-                                                <button className="btn btn-link btn-close">
-                                                    <i className="fas fa-times"></i><span className="sr-only">Close</span>
-                                                </button>
-                                            </figure>
-                                            <div className="product-detail">
-                                                <a href="#" className="product-name">Girl's Dark Bag</a>
-                                                <div className="price-box">
-                                                    <span className="product-price">$84.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
+                                    
                                     <a href="#" className="btn btn-dark wishlist-btn mt-4"><span>Go To
                                         Wishlist</span></a>
 
@@ -99,49 +86,13 @@ function Navbar() {
                             </div>
                             <span className="divider"></span>
                             <div className="dropdown cart-dropdown type2 mr-0 mr-lg-2">
-                                <a href="#" className="cart-toggle label-block link">
-                                    <div className="cart-label d-lg-show">
-                                        <span className="cart-name">Shopping Cart:</span>
-                                        <span className="cart-price">$0.00</span>
-                                    </div>
-                                    <i className="d-icon-bag"><span className="cart-count">2</span></i>
-                                </a>
-                                <div className="dropdown-box">
-                                    <div className="products scrollable">
-                                        <div className="product product-cart">
-                                            <figure className="product-media">
-                                                <a href="#">
-                                                    <img src="images/cart/product-1.jpg" alt="product" width="80"
-                                                        height="88" />
-                                                </a>
-                                                <button className="btn btn-link btn-close">
-                                                    <i className="fas fa-times"></i><span className="sr-only">Close</span>
-                                                </button>
-                                            </figure>
-                                            <div className="product-detail">
-                                                <a href="#" className="product-name">Riode White Trends</a>
-                                                <div className="price-box">
-                                                    <span className="product-quantity">1</span>
-                                                    <span className="product-price">$21.00</span>
-                                                </div>
-                                            </div>
+                              
 
-                                        </div>
-
-
-                                    </div>
-
-                                    <div className="cart-total">
-                                        <label>Subtotal:</label>
-                                        <span className="price">$139.00</span>
-                                    </div>
-
-                                    <div className="cart-action">
-                                        <a href="#" className="btn btn-dark btn-link">View Cart</a>
-                                        <a href="#" className="btn btn-dark"><span>Go To Checkout</span></a>
-                                    </div>
-
-                                </div>
+                                <Link to="/Cart" className="cart-toggle label-block link">
+                                   
+                                    <i className="d-icon-bag"><span className="cart-count">{cart.length}</span></i>
+                               </Link> 
+                               
 
                             </div>
                             <div className="header-search hs-toggle mobile-search">
@@ -175,7 +126,7 @@ function Navbar() {
                                         <a href="#">Products</a>
                                     </li>
                                     <li>
-                                        <Link to="/About">About</Link>
+                                        <Link to="/Cart">Cart</Link>
                                     </li>
                                     <li><a href="#">Contact Us</a></li>
                                     <li><a href="#">My Account</a></li>

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import './assets/css/all.min.css';
+import './assets/css/style.min.css';
 import './assets/css/demo2.min.css';
 import './assets/css/owl.carousel.min.css';
 import './assets/css/animate.min.css';
@@ -15,10 +16,15 @@ import './assets/fonts/fa-brands-400.woff2';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { Provider } from 'react-redux';
+import { store } from './redux/data/store';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+  <Provider store={store}>
+  <App/>
+  </Provider>
   </React.StrictMode>
 );
 

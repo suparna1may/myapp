@@ -1,7 +1,11 @@
 import React from 'react'
-import indeximages from '../../pages/Home/ProductsImage'
+import { useDispatch, useSelector }  from "react-redux";
+import { addToCart } from '../../redux/data/cartSlice';
 
-function ProductThumb() {
+
+function ProductCard() {
+    const items = useSelector((state) => state.allCart.items);
+    const dispatch = useDispatch();
     return (
         <>
 
@@ -9,13 +13,12 @@ function ProductThumb() {
                 <div class="container">
                     <h2 className="title title-simple title-center ls-m">Best Selling</h2>
                     <div className="product-wrapper row">
-
-                        {indeximages.map(({ id, src, name, price, category }) =>
-                            <div className="col-lg-3 col-md-4 col-6 mb-4">
+                    {items.map((item) => (
+                            <div className="col-lg-3 col-md-4 col-6 mb-4" key={item.id}>
                                 <div className="product">
                                     <figure className="product-media">
-                                        <a href="demo2-product.html">
-                                            <img src={src} alt="Blue Pinafore Denim Dress"
+                                        <a onClick={() => dispatch(addToCart(item))}>
+                                            <img src={item.src} alt="Blue Pinafore Denim Dress"
                                                 width="280" height="315" />
                                         </a>
                                         <div className="product-label-group">
@@ -29,19 +32,19 @@ function ProductThumb() {
                                                 className="d-icon-heart"></i></a>
                                         </div>
                                         <div className="product-action">
-                                            <a href="#" className="btn-product btn-quickview" title="Quick View">Quick
+                                            <a onClick={() => dispatch(addToCart(item))} className="btn-product btn-quickview" title="Quick View">Quick
                                                 View</a>
                                         </div>
                                     </figure>
                                     <div className="product-details">
                                         <div className="product-cat">
-                                            <a href="demo2-shop.html">{category}</a>
+                                            <a href="demo2-shop.html">{item.category}</a>
                                         </div>
                                         <h3 className="product-name">
-                                            <a href="demo2-product.html">{name}</a>
+                                            <a href="demo2-product.html">{item.name}</a>
                                         </h3>
                                         <div className="product-price">
-                                            <span className="price">{price}</span>
+                                            <span className="price">${item.price}</span>
                                         </div>
                                         <div className="ratings-container">
                                             <div className="ratings-full">
@@ -54,7 +57,7 @@ function ProductThumb() {
 
                                 </div>
                             </div>
-                        )}
+                          ))}
 
                     </div>
                 </div>
@@ -64,4 +67,4 @@ function ProductThumb() {
     )
 }
 
-export default ProductThumb
+export default ProductCard
