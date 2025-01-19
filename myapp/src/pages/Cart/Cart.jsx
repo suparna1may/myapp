@@ -90,7 +90,7 @@ function Cart() {
                                 <aside className="col-lg-4 sticky-sidebar-wrapper">
                                     <div className="sticky-sidebar" data-sticky-options="{'bottom': 20}">
                                         <div className="summary mb-4">
-                                            <h3 className="summary-title text-left">Cart Totals {totalQuantity}</h3>
+                                            <h3 className="summary-title text-left">Cart Total({totalQuantity})</h3>
 
                                             <table className="total">
                                                 <tr className="summary-subtotal">
@@ -98,7 +98,7 @@ function Cart() {
                                                         <h4 className="summary-subtitle">Total</h4>
                                                     </td>
                                                     <td>
-                                                        <p className="summary-total-price ls-s">${totalPrice}</p>
+                                                        <p className="summary-total-price ls-s">${totalPrice.toFixed(2)}</p>
                                                     </td>
                                                 </tr>
                                             </table>
