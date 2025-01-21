@@ -35,8 +35,7 @@ function ProductCard() {
                                                 className="d-icon-heart"></i></a>
                                         </div>
                                         <div className="product-action">
-                                            <a onClick={() => dispatch(addToCart(item))} className="btn-product btn-quickview" title="Quick View">Quick
-                                                View</a>
+                                            <Link to={`/product/${item.id}`} className="btn-product btn-quickview">Quick View </Link>
                                         </div>
                                     </figure>
                                     <div className="product-details">

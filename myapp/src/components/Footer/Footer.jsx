@@ -71,7 +71,7 @@ function Footer() {
           <div class="footer-bottom justify-content-center">
           
             <div class="footer-center">
-              <p class="copyright text-center">Riode eCommerce &copy; 2021. All Rights Reserved</p>
+              <p class="copyright text-center">STORE eCommerce &copy; 2021. All Rights Reserved</p>
             </div>
          
           </div>

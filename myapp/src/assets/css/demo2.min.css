@@ -10795,7 +10795,10 @@ button.mfp-arrow {
 }
 
 .product-image {
-    position: relative
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
 }
 
 .product-thumbs-wrap {

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import products from '../../pages/Home/ProductsImage';
 
 const initialState = {
-    cart: [],
+    cart: JSON.parse(localStorage.getItem('cart')) || [],
     items: products,
     totalQuantity: 0,
     totalPrice: 0,
@@ -22,6 +22,9 @@ export const cartSlice = createSlice({
         } else {
           state.cart.push(action.payload);
         }
+
+        localStorage.setItem('cart', JSON.stringify(state.cart));
+
       },
 
      
@@ -35,6 +38,9 @@ export const cartSlice = createSlice({
         } else {
           state.cart.push(action.payload);
         }
+
+        localStorage.setItem('cart', JSON.stringify(state.cart));
+
       },
 
       getCartTotal: (state) => {
@@ -61,6 +67,7 @@ export const cartSlice = createSlice({
 
       removeItem: (state, action) => {
         state.cart = state.cart.filter((item) => item.id !== action.payload);
+        localStorage.setItem('cart', JSON.stringify(state.cart));
       },
 
       increaseItemQuantity: (state, action) => {
@@ -70,6 +77,7 @@ export const cartSlice = createSlice({
           }
           return item;
         });
+        localStorage.setItem('cart', JSON.stringify(state.cart));
       },
 
       decreaseItemQuantity: (state, action) => {
@@ -79,6 +87,7 @@ export const cartSlice = createSlice({
           }
           return item;
         });
+        localStorage.setItem('cart', JSON.stringify(state.cart));
       },
  
 

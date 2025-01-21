@@ -13,7 +13,6 @@ function ProductInfo() {
 
   const dispatch = useDispatch();
 
-  // Set local state for product quantity
   const [quantity, setQuantity] = useState(1);
 
   if (!product) {
@@ -47,12 +46,12 @@ function ProductInfo() {
       <div className="page-content mb-10 pb-6">
         <div className="container">
           <div className="product product-single row mb-2">
-            <div className="col-md-6">
+            <div className="col-md-5">
               <figure className="product-image">
                     <img src={product.src} alt={product.name}/>
-                  </figure>             
+              </figure>             
             </div>
-            <div className="col-md-6">
+            <div className="col-md-7">
               <div className="product-details">
             
                 <h1 className="product-name">{product.name}</h1>
@@ -69,34 +68,23 @@ function ProductInfo() {
                   <a href="#product-tab-reviews" className="link-to-tab rating-reviews">( 6 reviews )</a>
                 </div>
               
-
                 <hr className="product-divider"/>
 
                 <div className="product-form product-qty">
                   <div className="product-form-group">
                     <div className="input-group mr-2">
-					<button className="quantity-minus d-icon-minus" onClick={handleDecrease}></button>
-                        <input
-                          value={quantity}
-                          className="quantity form-control"
-                          type="number"
-                          readOnly
-                        />
-                        <button className="quantity-plus d-icon-plus" onClick={handleIncrease}></button>
+					            <button className="quantity-minus d-icon-minus" onClick={handleDecrease}></button>
+                        <input value={quantity} className="quantity form-control" type="number" readOnly/>
+                      <button className="quantity-plus d-icon-plus" onClick={handleIncrease}></button>
                       </div>
-                      <button
-                        onClick={handleAddToCart}
-                        className="btn-product btn-cart text-normal ls-normal font-weight-semi-bold"
-                      >  <i className="d-icon-bag"></i>Add to
-                      Cart</button>
+                      <button onClick={handleAddToCart} className="btn-product btn-cart text-normal ls-normal font-weight-semi-bold">  
+                       <i className="d-icon-bag"></i>Add to Cart</button>
                   </div>
                 </div>
 
                 <hr className="product-divider mb-3"/>
 
-                <div className="product-footer">
-                
-                  <span className="divider d-lg-show"></span>
+                <div className="product-footer">             
                   <div className="product-action">
                     <a href="#" className="btn-product btn-wishlist mr-6"><i
                         className="d-icon-heart"></i>Add to

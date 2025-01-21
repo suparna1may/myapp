@@ -2,12 +2,14 @@ import React from 'react'
 import BannerImg from "../../assets/images/ban1.jpg"
 import Arrivalimg1 from "../../assets/images/arrival1.jpg"
 import Arrivalimg2 from "../../assets/images/arrival2.jpg"
+import { Link } from 'react-router-dom'
 
 
 function Banner() {
   return (
     <>
       <div className="container">
+        
         <div className="row">
           <div className="col-12 mb-4">
             <div className="banner banner-fixed intro-slide1 content-center content-middle">
@@ -40,9 +42,9 @@ function Banner() {
                 <h3 className="banner-title text-white font-weight-bold ls-md">
                   Women's Sale
                 </h3>
-                <a href="demo2-shop.html"
-                  className="btn btn-white btn-link btn-underline font-weight-semi-bold">Shop
-                  Now<i className="d-icon-arrow-right"></i></a>
+                <Link to="/Shop" className="btn btn-white btn-link btn-underline font-weight-semi-bold">Shop
+                  Now <i className="d-icon-arrow-right"></i></Link>
+                
               </div>
             </div>
           </div>
@@ -59,9 +61,8 @@ function Banner() {
                 <h3 className="banner-title text-white font-weight-bold ls-md">
                   New Sneaker
                 </h3>
-                <a href="demo2-shop.html"
-                  className="btn btn-white btn-link btn-underline btn-white font-weight-semi-bold">Shop
-                  Now<i className="d-icon-arrow-right"></i></a>
+                <Link to="/Shop" className="btn btn-white btn-link btn-underline font-weight-semi-bold">Shop
+                  Now <i className="d-icon-arrow-right"></i></Link>
               </div>
             </div>
           </div>

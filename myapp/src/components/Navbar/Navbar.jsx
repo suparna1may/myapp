@@ -15,7 +15,7 @@ function Navbar() {
                 <div className="header-top">
                     <div className="container">
                         <div className="header-left">
-                            <p className="welcome-msg">Welcome to Riode store message or remove it!</p>
+                            <p className="welcome-msg">Welcome to STORE!</p>
                         </div>
                         <div className="header-right">
 
@@ -123,7 +123,7 @@ function Navbar() {
                                     </li>
 
                                     <li>
-                                        <a href="#">Products</a>
+                                        <Link to="/Shop">Shop</Link>
                                     </li>
                                     <li>
                                         <Link to="/Cart">Cart</Link>
