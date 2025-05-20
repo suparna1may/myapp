@@ -1,0 +1,116 @@
+
+.cart.main {
+    border-top: 1px solid #e1e1e1
+}
+
+.cart .accordion {
+    border-bottom: 1px solid #e1e1e1
+}
+
+.cart .card-header {
+    font-size: 1.4rem
+}
+
+.cart .card-header>a {
+    padding-left: 2px
+}
+
+.cart .card-body {
+    margin-bottom: 2.4rem;
+    padding: 0
+}
+
+.cart .form-control {
+    font-family: Poppins,sans-serif
+}
+
+.cart .remove {
+    margin-right: 0;
+    width: 2rem;
+    text-align: center
+}
+
+.cart .summary {
+    line-height: 2.15
+}
+
+.cart .summary .title {
+    margin-bottom: 1rem;
+    padding-bottom: 1.8rem;
+    border-bottom: 1px solid #e1e1e1
+}
+
+.cart .btn-checkout {
+    display: block;
+    padding-top: 1.06em;
+    padding-bottom: 1.06em;
+    border-color: #333;
+    background-color: #333
+}
+
+.cart .product-thumbnail figure {
+    position: relative;
+    display: inline-block
+}
+
+.cart .shop-table th {
+    padding: 0.2rem 0 1.8rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #999;
+    line-height: 1;
+    letter-spacing: -0.025em
+}
+
+.cart .shop-table td {
+    padding: 1.6rem 2rem 1.6rem 0
+}
+
+.cart .shop-table td:last-child {
+    padding-right: 0
+}
+
+.cart .shop-table td:first-child {
+    padding: 2rem 2rem 1.5rem 0
+}
+
+.cart .shop-table .quantity.form-control {
+    font-weight: 700
+}
+
+.cart .product-remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+    width: 2.3rem;
+    height: 2.3rem;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #222
+}
+
+.cart .shipping {
+    margin-bottom: 0.3rem
+}
+
+.cart .btn {
+    border-width: 1px
+}
+
+.cart .shipping-row-last .summary-subtitle {
+    padding: 2.4rem 0 1.9rem
+}
+
+.cart .shipping-row-last li {
+    padding-bottom: 0.3rem
+}
+
+.cart-table tbody tr{
+    border-bottom: 1px solid #ccc;
+    height: 105px;
+    text-align: center;
+    vertical-align: baseline;
+}
